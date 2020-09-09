@@ -1,3 +1,5 @@
+#here's a change
+
 #!/usr/bin/env python3
 """
 WebSockets client
@@ -47,12 +49,15 @@ async def client(port: int, addr: str, max_packets: int, log_file: Path):
         else:
             print(qb)
 
+        logfile = open("logfile.txt", "a")
         for i in range(max_packets):
             data = await websocket.recv()
             if i % 5 == 0:
                 print(f"{i} total messages received")
             print(data)
-
+            logfile.write(data + "\n")
+            logfile.flush()
+        logfile.close()
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser(description="WebSocket client")
