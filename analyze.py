@@ -55,11 +55,22 @@ if __name__ == "__main__":
     #take dataframes out of dictionary
     tempdf = data["temperature"]
     occudf = data["occupancy"]
+    co2df = data["co2"]
+    
     #find the means and variances
     print("The mean temperature is ", tempdf.mean())
     print("The temperature variance is ", tempdf.var())
     print("The mean occupancy is ", occudf.mean())
     print("The occupancy variance is ", occudf.var())
+    
+    #find and plot the pdfs
+    tempplot = tempdf.plot.kde()
+    matplotlib.pyplot.title("PDF of Temperature Data")
+    occuplot = occudf.plot.kde()
+    matplotlib.pyplot.title("PDF of Occupancy Data")
+    co2plot = co2df.plot.kde()
+    matplotlib.pyplot.title("PDF of CO2 Data")
+   
     for k in data:
         # data[k].plot()
         time = data[k].index
