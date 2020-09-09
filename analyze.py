@@ -51,18 +51,31 @@ if __name__ == "__main__":
     file = Path(P.file).expanduser()
 
     data = load_data(file)
+<<<<<<< HEAD
 
 
 
     #take dataframes out of dictionary
     tempdf = data["temperature"]
     occudf = data["occupancy"]
+=======
+    
+    #take dataframes out of dictionary
+    tempdf = data["temperature"]
+    occudf = data["occupancy"]
+    co2df = data["co2"]
+    
+>>>>>>> d87d74d910869a9dc9a60ebca5fc44cd52a6f263
     #find the means and variances
     print("The mean temperature is ", tempdf.mean())
     print("The temperature variance is ", tempdf.var())
     print("The mean occupancy is ", occudf.mean())
     print("The occupancy variance is ", occudf.var())
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> d87d74d910869a9dc9a60ebca5fc44cd52a6f263
     #find and plot the pdfs
     tempplot = tempdf.plot.kde()
     matplotlib.pyplot.title("PDF of Temperature Data")
@@ -70,7 +83,11 @@ if __name__ == "__main__":
     matplotlib.pyplot.title("PDF of Occupancy Data")
     co2plot = co2df.plot.kde()
     matplotlib.pyplot.title("PDF of CO2 Data")
+<<<<<<< HEAD
 
+=======
+   
+>>>>>>> d87d74d910869a9dc9a60ebca5fc44cd52a6f263
     for k in data:
         # data[k].plot()
         time = data[k].index

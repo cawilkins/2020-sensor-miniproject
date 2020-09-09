@@ -48,8 +48,12 @@ async def client(port: int, addr: str, max_packets: int, log_file: Path):
             print(zlib.decompress(qb).decode("utf8"))
         else:
             print(qb)
+<<<<<<< HEAD
 
         logfile = open("logfile.txt", "a")
+=======
+    logfile = open("logfile.txt", "a")
+>>>>>>> d87d74d910869a9dc9a60ebca5fc44cd52a6f263
         for i in range(max_packets):
             data = await websocket.recv()
             if i % 5 == 0:
@@ -57,8 +61,14 @@ async def client(port: int, addr: str, max_packets: int, log_file: Path):
             print(data)
             logfile.write(data + "\n")
             logfile.flush()
+<<<<<<< HEAD
         logfile.close()
 
+=======
+    logfile.close()
+    
+    
+>>>>>>> d87d74d910869a9dc9a60ebca5fc44cd52a6f263
 if __name__ == "__main__":
     p = argparse.ArgumentParser(description="WebSocket client")
     p.add_argument("log_file", help="file to log JSON data")
