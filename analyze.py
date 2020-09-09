@@ -76,11 +76,11 @@ if __name__ == "__main__":
 
     #find and plot the pdfs
     tempplot = tempdf.plot.kde()
-    matplotlib.pyplot.title("PDF of Temperature Data")
+    plt.title("PDF of Temperature Data")
     occuplot = occudf.plot.kde()
-    matplotlib.pyplot.title("PDF of Occupancy Data")
+    plt.title("PDF of Occupancy Data")
     co2plot = co2df.plot.kde()
-    matplotlib.pyplot.title("PDF of CO2 Data")
+    plt.title("PDF of CO2 Data")
 
 
     for k in data:
