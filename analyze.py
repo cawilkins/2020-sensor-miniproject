@@ -51,7 +51,15 @@ if __name__ == "__main__":
     file = Path(P.file).expanduser()
 
     data = load_data(file)
-
+    
+    #take dataframes out of dictionary
+    tempdf = data["temperature"]
+    occudf = data["occupancy"]
+    #find the means and variances
+    print("The mean temperature is ", tempdf.mean())
+    print("The temperature variance is ", tempdf.var())
+    print("The mean occupancy is ", occudf.mean())
+    print("The occupancy variance is ", occudf.var())
     for k in data:
         # data[k].plot()
         time = data[k].index
