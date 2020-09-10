@@ -86,8 +86,9 @@ if __name__ == "__main__":
     for k in data:
         # data[k].plot()
         time = data[k].index
+        title = keylist[k]
         data[k].hist()
-        plt.title(keylist[k])
+        plt.title(title)
     plt.figure()
     plt.hist(np.diff(time.values).astype(np.int64) // 1000000000)
     plt.xlabel("Time (seconds)")
