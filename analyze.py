@@ -82,7 +82,7 @@ if __name__ == "__main__":
     co2plot = co2df.plot.kde()
     plt.title("PDF of CO2 Data")
 
-    keylist = ("temperature", "occupancy", "co2")
+    keylist = ["temperature", "occupancy", "co2"]
     for k in data:
         # data[k].plot()
         time = data[k].index
