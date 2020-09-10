@@ -82,7 +82,7 @@ if __name__ == "__main__":
     co2plot = co2df.plot.kde()
     plt.title("PDF of CO2 Data")
 
-
+    print(type(data.keys()))
     for k in data:
         # data[k].plot()
         time = data[k].index
